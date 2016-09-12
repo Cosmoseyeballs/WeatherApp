@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="WeatherApp.HomePage">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="ffdStackLayout" TargetType="StackLayout">
+
+                <Setter Property="Padding" Value="25,0,25,0" />
+                <Setter Property="BackgroundColor" Value="Gray" />
+                <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+
+    <RelativeLayout x:Name="profileRelativeLayout" Grid.Row="0" Grid.Column="0">
+        <Image x:Name="backgroundImage" Source="sunnycludesweather" Aspect="AspectFill"
+           RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width}"
+           RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height}"/>
+
+
+
+        <!-- Now we have the image, but we cannot place the stacklayout on the relativelayout as it is
+                 rubbery, but we can place a grid with one cell and have the stacklayout inside that -->
+        <Grid RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width}"
+                  RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height}">
+            <Grid.RowDefinitions>
+
+                <RowDefinition Height="3*" />
+                <RowDefinition Height="4*" />
+                <RowDefinition Height="2*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <StackLayout x:Name="TitleRow" Grid.Row="0" Grid.ColumnSpan="12" Padding="20, 5, 10, 5" >
+                <Label x:Name="TitleLabel" Text="Title" FontSize="40" HorizontalOptions="FillAndExpand"></Label>
+                <Label x:Name="TitleWindLabel" Text="960 meters" FontSize="20" HorizontalOptions="FillAndExpand"></Label>
+                <Label x:Name="TitleDateLabel" Text="Tirsdag, 30 April" FontSize="30" HorizontalOptions="FillAndExpand"></Label>
+            </StackLayout>
+
+
+            <ScrollView Orientation="Horizontal"  Grid.Row="1"  Grid.ColumnSpan="12" >
+              <StackLayout x:Name="OneDayWeatherList" Orientation="Horizontal" >
+              </StackLayout>
+            </ScrollView>
+
+          <ScrollView Orientation="Horizontal"  Grid.Row="2"  Grid.ColumnSpan="12" >
+            <StackLayout x:Name="OneWeekWeather" Orientation="Horizontal" >
+            </StackLayout>
+          </ScrollView>
+          
+        </Grid>
+    </RelativeLayout>
+
+
+
+</ContentPage>

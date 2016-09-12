@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Grid   Padding="25,0,25,0" BackgroundColor="Gray" HorizontalOptions="FillAndExpand" xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="WeatherApp.OneDayWeatherListView" >
+    <Grid.RowDefinitions>
+        <RowDefinition Height="*" />
+        <!-- title -->
+
+        <RowDefinition Height="2*" />
+        <!-- sky icon -->
+
+        <RowDefinition Height="*" />
+        <!-- WeatherRainFall % -->
+
+        <RowDefinition Height="3*" />
+        <!-- temp -->
+
+        <RowDefinition Height="2*" />
+        <!-- wind -->
+
+        <RowDefinition Height="3*" />
+        <!-- UV -->
+
+    </Grid.RowDefinitions>
+    <StackLayout Orientation="Horizontal" Padding="0,0,1,0" Grid.Row="0" HorizontalOptions="Center" Spacing="1">
+        <Label Text="10"></Label>
+        <Label Text="00" FontSize="Micro" VerticalOptions="CenterAndExpand"></Label>
+    </StackLayout>
+
+
+    <BoxView BackgroundColor="Green" Grid.Row="1" ></BoxView>
+
+    <Label Text="80%" Grid.Row="2"  HorizontalTextAlignment="Center"></Label>
+
+
+    <Label Text="-01'C" BackgroundColor="Blue" Grid.Row="3" 
+                           VerticalOptions="FillAndExpand" 
+                           VerticalTextAlignment="Center" 
+                           HorizontalTextAlignment="Center" ></Label>
+
+
+
+
+    <StackLayout Orientation="Vertical" Grid.Row="4" >
+        <Label Text="UV" HorizontalTextAlignment="Center"></Label>
+
+        <RelativeLayout >
+            <BoxView BackgroundColor="Fuchsia" Rotation="45" HeightRequest="30" WidthRequest="30"
+                                  RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.5, Constant=-15}"
+                                  RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.5, Constant=-15}"
+                                 />
+            <Label Text="0"  HorizontalTextAlignment="Center" VerticalTextAlignment="Center"
+                               RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width}"
+                                  RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height}"
+                               ></Label>
+        </RelativeLayout>
+    </StackLayout>
+</Grid>

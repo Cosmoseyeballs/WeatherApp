@@ -1,0 +1,482 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">iPhoneSimulator</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{7C93B0AE-138F-4D73-8FE8-28ADB737FA8F}</ProjectGuid>
+    <ProjectTypeGuids>{FEACFBD2-3405-455C-9665-78FE426C6842};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>WeatherApp.iOS</RootNamespace>
+    <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
+    <AssemblyName>WeatherAppiOS</AssemblyName>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\iPhoneSimulator\Debug</OutputPath>
+    <DefineConstants>DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <MtouchArch>i386, x86_64</MtouchArch>
+    <MtouchLink>None</MtouchLink>
+    <MtouchDebug>true</MtouchDebug>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\iPhoneSimulator\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <MtouchLink>None</MtouchLink>
+    <MtouchArch>i386, x86_64</MtouchArch>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhone' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\iPhone\Debug</OutputPath>
+    <DefineConstants>DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <MtouchArch>ARMv7, ARM64</MtouchArch>
+    <CodesignKey>iPhone Developer</CodesignKey>
+    <MtouchDebug>true</MtouchDebug>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\iPhone\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <MtouchArch>ARMv7, ARM64</MtouchArch>
+    <ConsolePause>false</ConsolePause>
+    <CodesignKey>iPhone Developer</CodesignKey>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Ad-Hoc|iPhone' ">
+    <DebugType>none</DebugType>
+    <Optimize>True</Optimize>
+    <OutputPath>bin\iPhone\Ad-Hoc</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>False</ConsolePause>
+    <MtouchArch>ARMv7, ARM64</MtouchArch>
+    <BuildIpa>True</BuildIpa>
+    <CodesignProvision>Automatic:AdHoc</CodesignProvision>
+    <CodesignKey>iPhone Distribution</CodesignKey>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'AppStore|iPhone' ">
+    <DebugType>none</DebugType>
+    <Optimize>True</Optimize>
+    <OutputPath>bin\iPhone\AppStore</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>False</ConsolePause>
+    <MtouchArch>ARMv7, ARM64</MtouchArch>
+    <CodesignProvision>Automatic:AppStore</CodesignProvision>
+    <CodesignKey>iPhone Distribution</CodesignKey>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Main.cs" />
+    <Compile Include="AppDelegate.cs" />
+    <None Include="Entitlements.plist" />
+    <None Include="Info.plist" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <ITunesArtwork Include="iTunesArtwork" />
+    <ITunesArtwork Include="iTunesArtwork@2x" />
+    <None Include="packages.config" />
+    <BundleResource Include="Resources\weather\Thumbs.db" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Default-568h%402x.png" />
+    <BundleResource Include="Resources\Default-Portrait.png" />
+    <BundleResource Include="Resources\Default-Portrait%402x.png" />
+    <BundleResource Include="Resources\Default.png" />
+    <BundleResource Include="Resources\Default%402x.png" />
+    <BundleResource Include="Resources\Icon-60%402x.png" />
+    <BundleResource Include="Resources\Icon-60%403x.png" />
+    <BundleResource Include="Resources\Icon-76.png" />
+    <BundleResource Include="Resources\Icon-76%402x.png" />
+    <BundleResource Include="Resources\Icon-Small-40.png" />
+    <BundleResource Include="Resources\Icon-Small-40%402x.png" />
+    <BundleResource Include="Resources\Icon-Small-40%403x.png" />
+    <BundleResource Include="Resources\Icon-Small.png" />
+    <BundleResource Include="Resources\Icon-Small%402x.png" />
+    <BundleResource Include="Resources\Icon-Small%403x.png" />
+    <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="Xamarin.Forms.Core, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Xamarin.Forms.2.0.0.6482\lib\Xamarin.iOS10\Xamarin.Forms.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Platform, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Xamarin.Forms.2.0.0.6482\lib\Xamarin.iOS10\Xamarin.Forms.Platform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Platform.iOS, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Xamarin.Forms.2.0.0.6482\lib\Xamarin.iOS10\Xamarin.Forms.Platform.iOS.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Xaml, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Xamarin.Forms.2.0.0.6482\lib\Xamarin.iOS10\Xamarin.Forms.Xaml.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Xamarin.iOS" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\WeatherApp\WeatherApp.csproj">
+      <Project>{2647F09C-68CB-4961-B126-E076E996851C}</Project>
+      <Name>WeatherApp</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\cludesweather.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\rainweather.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\sunnycludesweather.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\sunnyweather.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\weather\weather0.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\weather\weather1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\weather\weather10.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\weather\weather11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\weather\weather12.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\weather\weather13.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\weather\weather14.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\weather\weather15.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\weather\weather16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\weather\weather17.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\weather\weather18.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\weather\weather19.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\weather\weather2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\weather\weather20.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\weather\weather21.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\weather\weather22.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\weather\weather23.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\weather\weather24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\weather\weather25.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\weather\weather26.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\weather\weather27.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\weather\weather27u1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\weather\weather27u2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\weather\weather27u3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\weather\weather27u4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\weather\weather27u5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\weather\weather27u6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\weather\weather27u7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\weather\weather27u8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\weather\weather28.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\weather\weather29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\weather\weather29u1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\weather\weather29u2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\weather\weather29u3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\weather\weather29u4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\weather\weather29u5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\weather\weather29u6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\weather\weather29u7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\weather\weather29u8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\weather\weather3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\weather\weather30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\weather\weather31.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\weather\weather31u1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\weather\weather31u2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\weather\weather31u3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\weather\weather31u4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\weather\weather31u5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\weather\weather31u6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\weather\weather31u7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\weather\weather31u8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\weather\weather32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\weather\weather33.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\weather\weather33u1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\weather\weather33u2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\weather\weather33u3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\weather\weather33u4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\weather\weather33u5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\weather\weather33u6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\weather\weather33u7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\weather\weather33u8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\weather\weather34.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\weather\weather35.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\weather\weather36.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\weather\weather37.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\weather\weather38.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\weather\weather39.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\weather\weather4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\weather\weather40.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\weather\weather41.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\weather\weather42.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\weather\weather43.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\weather\weather44.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\weather\weather45.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\weather\weather45u1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\weather\weather45u2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\weather\weather45u3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\weather\weather45u4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\weather\weather45u5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\weather\weather45u6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\weather\weather45u7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\weather\weather45u8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\weather\weather46.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\weather\weather46u1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\weather\weather46u2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\weather\weather46u3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\weather\weather46u4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\weather\weather46u5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\weather\weather46u6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\weather\weather46u7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\weather\weather46u8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\weather\weather47.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\weather\weather47u1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\weather\weather47u2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\weather\weather47u3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\weather\weather47u4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\weather\weather47u5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\weather\weather47u6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\weather\weather47u7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\weather\weather47u8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\weather\weather5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\weather\weather6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\weather\weather7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\weather\weather8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\weather\weather9.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\weather\weatherna.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
+  <Import Project="..\..\packages\Xamarin.Forms.2.0.0.6482\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets" Condition="Exists('..\..\packages\Xamarin.Forms.2.0.0.6482\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\..\packages\Xamarin.Forms.2.0.0.6482\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Xamarin.Forms.2.0.0.6482\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets'))" />
+  </Target>
+</Project>
