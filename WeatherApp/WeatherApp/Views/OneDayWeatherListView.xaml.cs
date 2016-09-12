@@ -16,112 +16,162 @@ namespace WeatherApp
         }
 
 
-        //#region propertyes
-        //public static BindableProperty HourProperty = BindableProperty.Create(
-        //    propertyName: "Hour",
-        //    returnType: typeof(int),
-        //    declaringType: typeof(OneDayWeatherListView),
-        //    defaultValue: 0,
-        //    defaultBindingMode: BindingMode.OneWay,
-        //    propertyChanged: HandleHourChanged);
+        #region propertyes
+        public static BindableProperty HourProperty = BindableProperty.Create(
+            propertyName: "Hour",
+            returnType: typeof(int),
+            declaringType: typeof(OneDayWeatherListView),
+            defaultValue: 0,
+            defaultBindingMode: BindingMode.OneWay,
+            propertyChanged: HandleHourChanged);
 
 
-        //public static BindableProperty WeatherTypeProperty = BindableProperty.Create(
-        //    propertyName: "WeatherType",
-        //    returnType: typeof(string),
-        //    declaringType: typeof(OneDayWeatherListView),
-        //    defaultValue: 0,
-        //    defaultBindingMode: BindingMode.OneWay,
-        //    propertyChanged: HandleWeatherTypeChanged);
+        public static BindableProperty WeatherTypeProperty = BindableProperty.Create(
+            propertyName: "WeatherType",
+            returnType: typeof(string),
+            declaringType: typeof(OneDayWeatherListView),
+            defaultValue: 0,
+            defaultBindingMode: BindingMode.OneWay,
+            propertyChanged: HandleWeatherTypeChanged);
 
-        //public static BindableProperty HumidProperty = BindableProperty.Create(
-        //   propertyName: "Humid",
-        //   returnType: typeof(string),
-        //   declaringType: typeof(OneDayWeatherListView),
-        //   defaultValue: 0,
-        //   defaultBindingMode: BindingMode.OneWay,
-        //   propertyChanged: HandleHumidChanged);
+        public static BindableProperty HumidProperty = BindableProperty.Create(
+           propertyName: "Humid",
+           returnType: typeof(string),
+           declaringType: typeof(OneDayWeatherListView),
+           defaultValue: 0,
+           defaultBindingMode: BindingMode.OneWay,
+           propertyChanged: HandleHumidChanged);
 
-        //public static BindableProperty TempProperty = BindableProperty.Create(
-        //  propertyName: "Temp",
-        //  returnType: typeof(string),
-        //  declaringType: typeof(OneDayWeatherListView),
-        //  defaultValue: 0,
-        //  defaultBindingMode: BindingMode.OneWay,
-        //  propertyChanged: HandleTempChanged);
-        //#endregion
+        public static BindableProperty TempProperty = BindableProperty.Create(
+          propertyName: "Temp",
+          returnType: typeof(string),
+          declaringType: typeof(OneDayWeatherListView),
+          defaultValue: 0,
+          defaultBindingMode: BindingMode.OneWay,
+          propertyChanged: HandleTempChanged);
 
-        //#region Handle
-        //private static void HandleHourChanged(BindableObject bindable, object oldValue, object newValue)
-        //{
-        //    var newView = (OneDayWeatherListView)bindable;
-        //    newView.HourLabel.Text = (string)newValue;
-        //}
-        //private static void HandleWeatherTypeChanged(BindableObject bindable, object oldValue, object newValue)
-        //{
-        //    var newView = (OneDayWeatherListView)bindable;
-        //    newView.WeatherTypeIcon.Source = ImageSource.FromFile((string)newValue);
-        //}
-        //private static void HandleHumidChanged(BindableObject bindable, object oldValue, object newValue)
-        //{
-        //    var newView = (OneDayWeatherListView)bindable;
-        //    newView.HourLabel.Text = (string)newValue;
-        //}
-        //private static void HandleTempChanged(BindableObject bindable, object oldValue, object newValue)
-        //{
-        //    var newView = (OneDayWeatherListView)bindable;
-        //    newView.HourLabel.Text = (string)newValue;
-        //}
-        //#endregion
+        public static BindableProperty UiProperty = BindableProperty.Create(
+           propertyName: "Ui",
+           returnType: typeof(string),
+           declaringType: typeof(OneDayWeatherListView),
+           defaultValue: 0,
+           defaultBindingMode: BindingMode.OneWay,
+           propertyChanged: HandleUiChanged);
 
-        //#region fields
-        //public int Hour
-        //{
-        //    get
-        //    {
-        //        return (int)GetValue(HourProperty);
-        //    }
-        //    set
-        //    {
-        //        SetValue(HourProperty, value);
-        //    }
-        //}
+        public static BindableProperty UiColorProperty = BindableProperty.Create(
+           propertyName: "UiColor",
+           returnType: typeof(string),
+           declaringType: typeof(OneDayWeatherListView),
+           defaultValue: 0,
+           defaultBindingMode: BindingMode.OneWay,
+           propertyChanged: HandleUiColorChanged);
+        #endregion
 
-        //public string WeatherType
-        //{
-        //    get
-        //    {
-        //        return (string)GetValue(WeatherTypeProperty);
-        //    }
-        //    set
-        //    {
-        //        SetValue(WeatherTypeProperty, value);
-        //    }
-        //}
+        #region Handle
+        private static void HandleHourChanged(BindableObject bindable, object oldValue, object newValue)
+        {            
+            var newView = (OneDayWeatherListView)bindable;
+            newView.HourLabel.Text = (string)newValue;
+        }
+        private static void HandleWeatherTypeChanged(BindableObject bindable, object oldValue, object newValue)
+        {
+            var newView = (OneDayWeatherListView)bindable;
+            newView.WeatherTypeIcon.Source = ImageSource.FromFile((string)newValue);
+        }
+        private static void HandleHumidChanged(BindableObject bindable, object oldValue, object newValue)
+        {
+            var newView = (OneDayWeatherListView)bindable;
+            newView.HumidLabel.Text = (string)newValue;
+        }
+        private static void HandleTempChanged(BindableObject bindable, object oldValue, object newValue)
+        {
+            var newView = (OneDayWeatherListView)bindable;
+            newView.TempLabel.Text = (string)newValue;
+        }
 
-        //public string Humid
-        //{
-        //    get
-        //    {
-        //        return (string)GetValue(WeatherTypeProperty);
-        //    }
-        //    set
-        //    {
-        //        SetValue(WeatherTypeProperty, value);
-        //    }
-        //}
-        //public string Temp
-        //{
-        //    get
-        //    {
-        //        return (string)GetValue(WeatherTypeProperty);
-        //    }
-        //    set
-        //    {
-        //        SetValue(WeatherTypeProperty, value);
-        //    }
-        //}
-        //#endregion
+        private static void HandleUiChanged(BindableObject bindable, object oldValue, object newValue)
+        {
+            var newView = (OneDayWeatherListView)bindable;
+            newView.UvLabel.Text = (string)newValue;
+        }
+
+        private static void HandleUiColorChanged(BindableObject bindable, object oldValue, object newValue)
+        {
+            var newView = (OneDayWeatherListView)bindable;
+            newView.UvColor.BackgroundColor = (Color)newValue;
+        }
+        #endregion
+
+        #region fields
+        public int Hour
+        {
+            get
+            {
+                return (int)GetValue(HourProperty);
+            }
+            set
+            {
+                SetValue(HourProperty, value);
+            }
+        }
+
+        public string WeatherType
+        {
+            get
+            {
+                return (string)GetValue(WeatherTypeProperty);
+            }
+            set
+            {
+                SetValue(WeatherTypeProperty, value);
+            }
+        }
+
+        public string Humid
+        {
+            get
+            {
+                return (string)GetValue(WeatherTypeProperty);
+            }
+            set
+            {
+                SetValue(WeatherTypeProperty, value);
+            }
+        }
+        public string Temp
+        {
+            get
+            {
+                return (string)GetValue(WeatherTypeProperty);
+            }
+            set
+            {
+                SetValue(WeatherTypeProperty, value);
+            }
+        }
+        public string Ui
+        {
+            get
+            {
+                return (string)GetValue(WeatherTypeProperty);
+            }
+            set
+            {
+                SetValue(WeatherTypeProperty, value);
+            }
+        }
+        public string UiColor
+        {
+            get
+            {
+                return (string)GetValue(WeatherTypeProperty);
+            }
+            set
+            {
+                SetValue(WeatherTypeProperty, value);
+            }
+        }
+        #endregion
 
 
 
