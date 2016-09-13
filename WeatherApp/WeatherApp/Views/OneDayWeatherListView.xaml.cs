@@ -27,20 +27,20 @@ namespace WeatherApp
 
 
         public static BindableProperty WeatherTypeProperty = BindableProperty.Create(
-            propertyName: nameof(Weather),
+            propertyName: nameof(weather),
             returnType: typeof(string), // imageName
             declaringType: typeof(OneDayWeatherListView),
-            defaultValue: 0,
+            defaultValue: "",
             defaultBindingMode: BindingMode.OneWay,
             propertyChanged: HandleWeatherChanged);
 
-        //public static BindableProperty HumidProperty = BindableProperty.Create(
-        //   propertyName: "Humid",
-        //   returnType: typeof(string),
-        //   declaringType: typeof(OneDayWeatherListView),
-        //   defaultValue: 0,
-        //   defaultBindingMode: BindingMode.OneWay,
-        //   propertyChanged: HandleHumidChanged);
+        public static BindableProperty HumidProperty = BindableProperty.Create(
+           propertyName: nameof(humid),
+           returnType: typeof(int),
+           declaringType: typeof(OneDayWeatherListView),
+           defaultValue: 0,
+           defaultBindingMode: BindingMode.OneWay,
+           propertyChanged: HandleHumidChanged);
 
         //public static BindableProperty TempProperty = BindableProperty.Create(
         //  propertyName: "Temp",
@@ -71,20 +71,23 @@ namespace WeatherApp
         private static void HandleHourChanged(BindableObject bindable, object oldValue, object newValue)
         {
             var newView = (OneDayWeatherListView)bindable;
-            newView.HourLabel.Text = (string)newValue;
+            var h = (int)newValue;
+            newView.HourLabel.Text = h.ToString();
         }
         private static void HandleWeatherChanged(BindableObject bindable, object oldValue, object newValue)
         {
             var newView = (OneDayWeatherListView)bindable;
 
             // ret newValue
-            newView.WeatherTypeIcon.Source = ImageSource.FromFile((string)newValue);
+            newView.WeatherTypeIcon.Source = ImageSource.FromFile("weather1.png");  //(string)newValue);
         }
-        //private static void HandleHumidChanged(BindableObject bindable, object oldValue, object newValue)
-        //{
-        //    var newView = (OneDayWeatherListView)bindable;
-        //    newView.HumidLabel.Text = (string)newValue;
-        //}
+        private static void HandleHumidChanged(BindableObject bindable, object oldValue, object newValue)
+        {
+            var newView = (OneDayWeatherListView)bindable;
+            var h = (int)newValue;
+
+            newView.HumidLabel.Text = h.ToString();
+        }
         //private static void HandleTempChanged(BindableObject bindable, object oldValue, object newValue)
         //{
         //    var newView = (OneDayWeatherListView)bindable;
@@ -105,7 +108,7 @@ namespace WeatherApp
         //#endregion
 
         //#region fields
-        public int Hour
+        public int hour
         {
             get
             {
@@ -117,7 +120,7 @@ namespace WeatherApp
             }
         }
 
-        public string Weather
+        public string weather
         {
             get
             {
@@ -129,17 +132,17 @@ namespace WeatherApp
             }
         }
 
-        //public string Humid
-        //{
-        //    get
-        //    {
-        //        return (string)GetValue(WeatherTypeProperty);
-        //    }
-        //    set
-        //    {
-        //        SetValue(WeatherTypeProperty, value);
-        //    }
-        //}
+        public string humid
+        {
+            get
+            {
+                return (string)GetValue(WeatherTypeProperty);
+            }
+            set
+            {
+                SetValue(WeatherTypeProperty, value);
+            }
+        }
         //public string Temp
         //{
         //    get

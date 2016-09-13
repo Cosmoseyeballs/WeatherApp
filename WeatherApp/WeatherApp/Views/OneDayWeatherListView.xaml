@@ -35,9 +35,10 @@
 
 
     <!--<BoxView x:Name="WeatherTypeIcon" BackgroundColor="Green" Grid.Row="1" ></BoxView>-->
-    <Image x:Name="WeatherTypeIcon" BackgroundColor="Green" Grid.Row="1" />
+    <Image x:Name="WeatherTypeIcon" Source="weather1.png" Grid.Row="1" />
 
-    <Label x:Name="HumidLabel"  Text="80%" Grid.Row="2"  HorizontalTextAlignment="Center"></Label>
+
+    <Label x:Name="HumidLabel"  Text="80%" Grid.Row="2"  BackgroundColor="Blue"  HorizontalTextAlignment="Center"></Label>
 
 
     <Label x:Name="TempLabel" Text="-01'C" BackgroundColor="Blue" Grid.Row="3" 

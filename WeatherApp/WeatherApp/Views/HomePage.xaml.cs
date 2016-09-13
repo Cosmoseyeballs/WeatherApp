@@ -22,8 +22,18 @@ namespace WeatherApp
 
             foreach (var item in _dayViewModel.GetDay(0).Hours)
             {
+
+                //var dt = new DataTemplate(typeof(OneDayWeatherListView));
+                //dt.SetBinding(OneDayWeatherListView.HourProperty, nameof(item.hour);
+
+
                 var temp = new OneDayWeatherListView();
-                // temp.BindingContext = 
+                temp.BindingContext = item;
+                temp.SetBinding(OneDayWeatherListView.HourProperty, nameof(item.hour));
+                temp.SetBinding(OneDayWeatherListView.WeatherTypeProperty, nameof(item.weatherType.imageName));
+
+                temp.SetBinding(OneDayWeatherListView.HumidProperty, nameof(item.humid));
+
                 OneDayWeatherList.Children.Add(temp);
             }
 

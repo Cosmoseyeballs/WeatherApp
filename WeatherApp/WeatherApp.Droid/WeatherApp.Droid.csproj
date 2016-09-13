@@ -129,6 +129,7 @@
     <AndroidResource Include="Resources\drawable\sunnyweather.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Resources\drawable\weather1.png" />
     <Content Include="Resources\drawable\weather\weather0.png" />
     <Content Include="Resources\drawable\weather\weather1.png" />
     <Content Include="Resources\drawable\weather\weather10.png" />
