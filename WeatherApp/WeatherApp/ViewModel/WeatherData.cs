@@ -15,7 +15,7 @@ namespace WeatherApp.ViewModel
             return new List<UvType>()
             {
                 new UvType { Name="U", Color = Color.Red },
-                new UvType { Name="L", Color = Color.Yellow }
+                new UvType { Name="L", Color = Color.Green }
 
             };
         }
@@ -41,9 +41,9 @@ namespace WeatherApp.ViewModel
         {
             return new List<WeatherType>()
             {
-                new WeatherType { imageName = "weather10", Name="Rain" },
-                new WeatherType { imageName = "weather34", Name="Sunny with cludes" },
-                new WeatherType { imageName = "weather32", Name="Sunny" },
+                new WeatherType { imageName = "weather10.png", Name="Rain" },
+                new WeatherType { imageName = "weather34.png", Name="Sunny with cludes" },
+                new WeatherType { imageName = "weather32.png", Name="Sunny" },
 
             };
         }
@@ -71,7 +71,10 @@ namespace WeatherApp.ViewModel
                             humid = 98,
                             temp = 13,
                             uv = GetUv()[0],
+                            uiColor=GetUv()[0].Color,
                             weatherType = GetWeatherType()[0],
+                            imageName = GetWeatherType()[2].imageName,
+
                             wind=  GetWind()[0],
                             windSpeed = 5
 
@@ -81,7 +84,10 @@ namespace WeatherApp.ViewModel
                             humid = 86,
                             temp = 18,
                             uv = GetUv()[0],
+                            uiColor=GetUv()[1].Color,
                             weatherType = GetWeatherType()[0],
+                            imageName = GetWeatherType()[0].imageName,
+
                             wind= GetWind()[1],
                             windSpeed = 10
 
@@ -91,7 +97,10 @@ namespace WeatherApp.ViewModel
                             humid = 60,
                             temp = 19,
                             uv = GetUv()[1],
+                            uiColor=GetUv()[0].Color,
                             weatherType = GetWeatherType()[1],
+                            imageName = GetWeatherType()[1].imageName,
+
                             wind= GetWind()[1],
                             windSpeed = 22
                         },
@@ -100,7 +109,10 @@ namespace WeatherApp.ViewModel
                             humid = 10,
                             temp = 25,
                             uv = GetUv()[1],
+                            uiColor=GetUv()[1].Color,
                             weatherType = GetWeatherType()[1],
+                            imageName = GetWeatherType()[0].imageName,
+
                             wind= GetWind()[2],
                             windSpeed = 22
                         },
@@ -109,7 +121,10 @@ namespace WeatherApp.ViewModel
                             humid = 10,
                             temp = 28,
                             uv = GetUv()[1],
+                            uiColor=GetUv()[0].Color,
                             weatherType = GetWeatherType()[2],
+                            imageName = GetWeatherType()[1].imageName,
+
                             wind= GetWind()[2],
                             windSpeed = 15
                         },
@@ -118,6 +133,8 @@ namespace WeatherApp.ViewModel
                             humid = 5,
                             temp = 32,
                             uv = GetUv()[1],
+                            uiColor=GetUv()[0].Color,
+                            imageName = GetWeatherType()[2].imageName,
                             weatherType = GetWeatherType()[2],
                             wind= GetWind()[3],
                             windSpeed = 5

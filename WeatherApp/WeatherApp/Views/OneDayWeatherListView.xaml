@@ -53,7 +53,7 @@
         <Label Text="UV" HorizontalTextAlignment="Center"></Label>
 
         <RelativeLayout >
-            <BoxView x:Name="UvColor" BackgroundColor="Fuchsia" Rotation="45" HeightRequest="30" WidthRequest="30"
+            <BoxView x:Name="UvColor2"  Rotation="45" HeightRequest="30" WidthRequest="30"
                                   RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.5, Constant=-15}"
                                   RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.5, Constant=-15}"
                                  />

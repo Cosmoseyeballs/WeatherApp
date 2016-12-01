@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Xamarin.Forms;
 
 namespace WeatherApp.Model
 {
@@ -16,6 +17,9 @@ namespace WeatherApp.Model
         public int temp { get; set; }
         public WindType wind { get; set; }
         public UvType uv { get; set; }
-        
+        public Color uiColor { get; set; }
+        public string imageName { get; set; }
+
+
     }
 }

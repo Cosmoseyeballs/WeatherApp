@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,21 +20,11 @@ namespace WeatherApp
 
 
             BindingContext = _dayViewModel.GetDay(0);
-
+            
             foreach (var item in _dayViewModel.GetDay(0).Hours)
             {
-
-                //var dt = new DataTemplate(typeof(OneDayWeatherListView));
-                //dt.SetBinding(OneDayWeatherListView.HourProperty, nameof(item.hour);
-
-
-                var temp = new OneDayWeatherListView();
+                var temp = new OneDayWeatherListView(item);
                 temp.BindingContext = item;
-                temp.SetBinding(OneDayWeatherListView.HourProperty, nameof(item.hour));
-                temp.SetBinding(OneDayWeatherListView.WeatherTypeProperty, nameof(item.weatherType.imageName));
-
-                temp.SetBinding(OneDayWeatherListView.HumidProperty, nameof(item.humid));
-
                 OneDayWeatherList.Children.Add(temp);
             }
 
