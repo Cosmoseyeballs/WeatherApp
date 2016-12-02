@@ -25,6 +25,7 @@ namespace WeatherApp
             this.SetBinding(OneDayWeatherListView.UvColorProperty, "uv.Color"); // nameof(item.uv.Color));
             this.SetBinding(OneDayWeatherListView.UvNameProperty, "uv.Name"); // nameof(item.uv.Color));
 
+            this.SetBinding(OneDayWeatherListView.TempProperty, nameof(temp)); // nameof(item.uv.Color));
 
 
         }
@@ -72,6 +73,15 @@ namespace WeatherApp
          defaultBindingMode: BindingMode.OneWay,
          propertyChanged: HandleUvNameChanged);
 
+        public static BindableProperty TempProperty = BindableProperty.Create(
+              propertyName: nameof(temp),
+              returnType: typeof(int),
+              declaringType: typeof(OneDayWeatherListView),
+              defaultValue: 0,
+              defaultBindingMode: BindingMode.OneWay,
+              propertyChanged: HandleTempChanged);
+
+
         //public static BindableProperty TempProperty = BindableProperty.Create(
         //  propertyName: "Temp",
         //  returnType: typeof(string),
@@ -99,6 +109,13 @@ namespace WeatherApp
 
         //#region Handle
 
+        private static void HandleTempChanged(BindableObject bindable, object oldValue, object newValue)
+        {
+            var newView = (OneDayWeatherListView)bindable;
+            var h = (int)newValue;
+            newView.TempLabel.Text = h.ToString()+ "'C";
+        }
+
         private static void HandleUvNameChanged(BindableObject bindable, object oldValue, object newValue)
         {
             var newView = (OneDayWeatherListView)bindable;
@@ -118,9 +135,9 @@ namespace WeatherApp
         {
             var newView = (OneDayWeatherListView)bindable;
 
-            var h =  (int)newValue == 0? "0": newValue.ToString();
+            var h =  (int)newValue == 0? "0": newValue;
             Debug.WriteLine("********************************** \n HourChanged === {0}", h);
-            newView.HourLabel.Text = h;
+            newView.HourLabel.Text = h.ToString();
         }
         private static void HandleWeatherChanged(BindableObject bindable, object oldValue, object newValue)
         {
@@ -157,6 +174,18 @@ namespace WeatherApp
 
         //#region fields
         public int hour
+        {
+            get
+            {
+                return (int)GetValue(HourProperty);
+            }
+            set
+            {
+                SetValue(HourProperty, value);
+            }
+        }
+
+        public int temp
         {
             get
             {

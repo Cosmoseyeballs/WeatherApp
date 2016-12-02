@@ -67,9 +67,9 @@ namespace WeatherApp.ViewModel
                     Date=new DateTime(2016,6,9),
                     Hours=  new List<DayItemModel>() {
                         new Model.DayItemModel {
-                            hour = 0,
+                            hour = 00,
                             humid = 98,
-                            temp = 13,
+                            temp = -1,
                             uv = GetUv()[0],
                             uiColor=GetUv()[0].Color,
                             weatherType = GetWeatherType()[0],
